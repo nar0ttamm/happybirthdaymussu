@@ -15,13 +15,13 @@ function playNext() {
         video.src = "2024.mp4";
         video.play();
         nextBtn.textContent = "Back";  // Change button text to "Back"
-        setPopupMessage("This is a special message for video 2!");  // Update popup message for video 2
+        setPopupMessage("I tried to make a short film out of us, our storyline, our love and our struggles. Living in cities, 1400 km apart, yet tied by a thread which ties our hearts, the distance is so big baby, so it gets disturbed by the things inbetween, there should nothing in between us, only us.");  // Update popup message for video 2
     } else {
         // Play the first video again
         video.src = "2023.mp4";
         video.play();
         nextBtn.textContent = "Next";  // Change button text back to "Next"
-        setPopupMessage("This is a special message for video 1!");  // Update popup message for video 1
+        setPopupMessage("Our first meet, first time getting to see, touch, feel the love we manifested despite the distance in all odds and dreamed together with one vision, a future when we are finally happy to have each other.");  // Update popup message for video 1
     }
     
     isVideo1Playing = !isVideo1Playing;  // Toggle the flag

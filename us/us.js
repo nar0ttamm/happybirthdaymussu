@@ -1,8 +1,8 @@
 // Video and Message Arrays
 const videos = ['gustas.mp4', 'mockingbird.mp4'];  // Only two videos now
 const messages = [
-    "I love you a lot", 
-    "Mwahhhhhhh"
+    "Me gustas tu - (I love you). Our fun side is always we find it crazy and enchanting, this is what we lived in span of just 6 days, the fun we'll have living together, the companions of life, its just we wish as soon as possible our dream of living together becomes real.", 
+    "We are fun, but sometimes we deal with the opposite of it, pain and sadness, the way we deak it, the way god helps us resolve and do fun together and foresee our future."
 ];
 
 let currentVideoIndex = 0;
