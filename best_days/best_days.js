@@ -1,5 +1,5 @@
 const dates2023 = ["2nd June", "3rd June", "4th June"];
-const dates2024 = ["10th June", "11th June", "12th June", "26th Dec", "27th Dec", "28th Dec"];
+const dates2024 = ["10th June", "11th June", "12th June"];
 
 // Array of video files instead of images
 const videos2023 = ["2.mp4", "3.mp4", "4.mp4"];
@@ -14,10 +14,7 @@ const messages = {
     "2024": {
         "10th June": "Can't wait for more memories!",
         "11th June": "Remember this special moment!",
-        "12th June": "You make every day better!",
-        "26th Dec": "A beautiful day spent with you!",
-        "27th Dec": "Another memory to cherish.",
-        "28th Dec": "Our love grows stronger every day!"
+        "12th June": "You make every day better!"
     }
 };
 

@@ -3,57 +3,58 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Chand Si Mehbooba</title>
+    <title>Meri Chand 🌝</title>
     <link rel="stylesheet" href="chand.css">
 </head>
 <body>
     <div class="container">
         <header>
-            <h2>Messages for Her</h2>
-            <say>Here's to our beautiful years together...</say>
+            <h3>इस सुन्दर गीत रूपक प्रेम को अपने नाम तीसरी बार करने की ढेरो शुभकामनाये मेरी मेहबूबा 💕</h3>
         </header>
         
         <span id="video-note">This is your video note for the first video</span>
         
         <div class="video-wrapper">
-            <video id="chand-video" autoplay controls playsinline>
+            <!-- Video player -->
+            <video id="chand-video" autoplay playsinline loop>
                 <source src="chand2022.mp4" type="video/mp4">
                 Your browser does not support the video tag.
             </video>
-        </div>
 
-        <div class="navigation">
-            <button id="back-btn" class="nav-btn">&#8592;</button>
-            <button id="home-btn" class="nav-btn" onclick="window.location.href='../index.html'">🏠︎</button>
-            <button id="next-btn" class="nav-btn">&#8594;</button>
+            <!-- Buttons container below the video -->
+            <div class="navigation">
+                <button id="back-btn" class="nav-btn">&#8592;</button>
+                <button id="home-btn" class="nav-btn" onclick="window.location.href='../index.html'">🏠︎</button>
+                <button id="next-btn" class="nav-btn">&#8594;</button>
+            </div>
         </div>
     </div>
 
     <script>
-        const videos = ["chand2022.mp4", "chand2023.mp4", "chand2024.mp4"]; // Add third video here
+        const videos = ["chand2022.mp4", "chand2023.mp4", "chand2024.mp4"];
         const videoElement = document.getElementById("chand-video");
         const videoNote = document.getElementById("video-note");
         let currentVideo = 0;
 
         videoElement.addEventListener('ended', function() {
-            currentVideo = (currentVideo + 1) % videos.length; // Loop back to the first video
+            currentVideo = (currentVideo + 1) % videos.length;
             videoElement.src = videos[currentVideo];
             videoNote.textContent = `This is your video note for video ${currentVideo + 1}`;
-            videoElement.play(); // Autoplay the next video
+            videoElement.play();
         });
 
         document.getElementById("next-btn").addEventListener("click", function() {
             currentVideo = (currentVideo + 1) % videos.length;
             videoElement.src = videos[currentVideo];
             videoNote.textContent = `This is your video note for video ${currentVideo + 1}`;
-            videoElement.play(); // Autoplay the next video
+            videoElement.play();
         });
 
         document.getElementById("back-btn").addEventListener("click", function() {
             currentVideo = (currentVideo - 1 + videos.length) % videos.length;
             videoElement.src = videos[currentVideo];
             videoNote.textContent = `This is your video note for video ${currentVideo + 1}`;
-            videoElement.play(); // Autoplay the previous video
+            videoElement.play();
         });
     </script>
 </body>

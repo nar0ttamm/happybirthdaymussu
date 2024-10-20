@@ -6,13 +6,13 @@
     <meta name="viewport" content="width=1000, user-scalable=no">
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"> <!-- Added Font Awesome -->
-    <title>Happy Birthday!</title>
+    <title>Bday Girl Mwaah</title>
 </head>
 
 <body>
     <div class="container">
         <header>
-            <h1>Happy Birthday!</h1>
+            <h1>Happiest 18th My Babygirl <3 </h1>
             <nav>
                 <ul>
                     <li><a href="#my_mussu"><i class="fas fa-heart"></i> My mussu</a></li>
@@ -65,7 +65,81 @@
             <h2>Yours and only yours, Narottam</h2>
         </footer>
     </div>
+    <div id="celebration" class="hidden">
+        <div class="rocket"></div>
+        <div class="cracker"></div>
+        <div class="sparkles"></div>
+    </div>
     <script>
+        window.onload = () => {
+            const celebration = document.getElementById('celebration');
+            celebration.classList.remove('hidden');
+    
+            // Function to create a cracker
+            const createCracker = () => {
+                const cracker = document.createElement('div');
+                cracker.className = 'cracker';
+                cracker.style.left = Math.random() * 100 + 'vw'; // Random horizontal position
+                cracker.style.bottom = Math.random() * 30 + 20 + 'vh'; // Random vertical position
+                celebration.appendChild(cracker);
+            };
+    
+            // Function to create a rocket
+            const createRocket = () => {
+                const rocket = document.createElement('div');
+                rocket.className = 'rocket';
+                rocket.style.left = Math.random() * 100 + 'vw'; // Random horizontal position
+                rocket.style.animationDelay = Math.random() * 5 + 's'; // Random delay for each rocket
+                celebration.appendChild(rocket);
+    
+                // Remove rocket after animation
+                rocket.addEventListener('animationend', () => {
+                    rocket.remove();
+                });
+            };
+    
+            // Function to create an emoji
+            const createEmoji = () => {
+                const emojis = ['🎉', '❤️', '🎂', '🎀']; // Emojis to scatter
+                const emoji = document.createElement('div');
+                emoji.className = 'emoji';
+                emoji.textContent = emojis[Math.floor(Math.random() * emojis.length)];
+                emoji.style.left = Math.random() * 100 + 'vw'; // Random horizontal position
+                emoji.style.bottom = Math.random() * 100 + 'vh'; // Random vertical position
+                celebration.appendChild(emoji);
+    
+                // Remove emoji after animation
+                emoji.addEventListener('animationend', () => {
+                    emoji.remove();
+                });
+            };
+    
+            // Create multiple crackers initially
+            for (let i = 0; i < 20; i++) {
+                createCracker();
+            }
+    
+            // Create rockets at intervals
+            setInterval(() => {
+                createRocket();
+            }, 1000); // Create a new rocket every second
+    
+            // Create emojis at intervals
+            setInterval(() => {
+                createEmoji();
+            }, 500); // Create a new emoji every 500 ms
+    
+            // Create sparkle effect
+            const sparkles = document.createElement('div');
+            sparkles.className = 'sparkles';
+            celebration.appendChild(sparkles);
+    
+            // Hide celebration effects after 10 seconds
+            setTimeout(() => {
+                celebration.classList.add('hidden');
+            }, 10000); // Adjust this duration for how long you want the effects to last
+        };
+    
         // Smooth scrolling behavior
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
@@ -87,13 +161,13 @@
                 // Stop all audio before playing the next one
                 const audios = document.querySelectorAll('audio');
                 audios.forEach(audio => {
-                     audio.pause()
-                     audio.currentTime = 0;
+                    audio.pause();
+                    audio.currentTime = 0;
                 });
-
+    
                 videoAudio.pause();
                 videoAudio.currentTime = 0;
-
+    
                 // Play background music for the clicked section
                 const targetId = this.getAttribute('href').substring(1); // Get the target section ID
                 const targetAudio = document.getElementById(targetId + '-audio');
@@ -140,17 +214,15 @@
         videoElement.addEventListener('click', function () {
             // Stop all audio before playing the video audio
             const audios = document.querySelectorAll('audio');
-            audios.forEach(audio =>  {
+            audios.forEach(audio => {
                 audio.pause();
                 audio.currentTime = 0;
             });
     
             videoAudio.play(); // Play the background music when the video is clicked
         });
-        document.getElementById('mussu-audio').addEventListener('play', function() {
-    console.log('Mussu audio is playing');
-});
     </script>
+    
     
 </body>
 

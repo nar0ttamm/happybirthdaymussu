@@ -155,6 +155,88 @@ footer {
     border: none
 }
 
+/* Celebration effects */
+#celebration {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none; /* Allow clicks to pass through */
+    z-index: 9999;
+}
+
+.cracker {
+    position: absolute;
+    bottom: 0;
+    width: 20px; /* Size of the cracker */
+    height: 50px; /* Height of the cracker */
+    background-color: #ffcc00;
+    opacity: 0.8;
+    animation: cracker-animation 2s forwards;
+}
+
+@keyframes cracker-animation {
+    from {
+        transform: translateY(0);
+    }
+    to {
+        transform: translateY(-100vh); /* Move it up */
+        opacity: 0; /* Fade out */
+    }
+}
+
+.rocket {
+    position: absolute;
+    bottom: 0;
+    width: 30px; /* Width of the rocket */
+    height: 60px; /* Height of the rocket */
+    background-color: #ff0000;
+    animation: rocket-animation 2s forwards;
+}
+
+@keyframes rocket-animation {
+    0% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+    50% {
+        transform: translateY(-50vh); /* Burst height */
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(-70vh); /* Continue moving up */
+        opacity: 0; /* Fade out */
+        background-color: transparent; /* Optional: make it transparent after bursting */
+    }
+}
+
+.emoji {
+    position: absolute;
+    font-size: 40px; /* Increase size for visibility */
+    animation: scatter-animation 5s forwards;
+}
+
+@keyframes scatter-animation {
+    0% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(-100px) rotate(360deg); /* Move up and rotate */
+        opacity: 0; /* Fade out */
+    }
+}
+
+.sparkles {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    opacity: 0.5; /* Semi-transparent */
+    pointer-events: none; /* Allow clicks to pass through */
+}
+
+
 /* Background images for sections */
 #my_mussu::before { background-image: url('my_mussubg.png'); }
 #journey::before { background-image: url('journey/journeybg.jpg'); }

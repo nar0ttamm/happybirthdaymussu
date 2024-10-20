@@ -12,7 +12,7 @@ body {
     justify-content: center;
     align-items: center;
     height: 100vh;
-    overflow: hidden; /* Hide scrollbars */
+    overflow: hidden;
 }
 
 .container {
@@ -31,57 +31,39 @@ header {
     z-index: 2;
 }
 
-header h1 {
-    font-size: 2.5em;
-    margin-bottom: 10px;
-}
-
-header p {
-    font-size: 1.2em;
-}
-
 #video-note {
-    margin: 0; /* Remove margin */
-    padding: 0; /* Remove padding */
+    margin: 0;
+    padding: 0;
     text-align: center;
     font-size: 0.9em;
-    color: #ffcc00; /* Highlight note in a contrasting color */
-    position: relative;
-    z-index: 1;
-    height: 100px; /* Adjust height as needed */
+    color: #ffcc00;
+    height: 100px;
     display: flex;
-    align-items: flex-start; /* Align text at the top */
-    justify-content: center; /* Center text horizontally */
+    align-items: flex-start;
+    justify-content: center;
 }
 
 .video-wrapper {
     flex-grow: 1;
     display: flex;
+    flex-direction: column; /* Ensure the content stacks vertically */
     justify-content: center;
     align-items: center;
-    position: relative;
-    margin-top: 40px;
 }
 
 video {
     width: 100%;
     height: auto;
-    max-height: 80vh; /* Ensure video doesn't exceed 80% of viewport */
+    max-height: 70vh; /* Ensure video doesn't exceed 70% of viewport */
     background: black;
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    margin: auto;
 }
 
+/* Position the navigation directly below the video */
 .navigation {
     display: flex;
     justify-content: space-between;
+    width: 100%;
     padding: 20px;
-    position: relative;
-    z-index: 2;
 }
 
 .nav-btn {
@@ -93,7 +75,6 @@ video {
     font-size: 1.5em;
     cursor: pointer;
     transition: transform 0.2s ease;
-    z-index: 3; /* Ensure buttons are visible on top of the video */
 }
 
 .nav-btn:hover {
@@ -101,7 +82,7 @@ video {
 }
 
 .nav-btn:active {
-    transform: scale(0.9); /* Smooth effect on button click */
+    transform: scale(0.9);
 }
 
 .nav-btn:focus {
