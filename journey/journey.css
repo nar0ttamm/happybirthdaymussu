@@ -1,0 +1,151 @@
+/* General styling */
+body {
+    font-family: Arial, sans-serif;
+    background-color: black;
+    color: white;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    text-align: center;
+    padding: 20px;
+    background-color: #001f3f;
+    color: #f1c40f;
+}
+
+h1 {
+    margin: 0;
+    font-size: 2.5rem;
+}
+
+/* Video container */
+.video-container {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 80vh;
+}
+
+.video {
+    width: 80%;
+    border: 5px solid #001f3f;
+    border-radius: 10px;
+    transition: transform 0.5s ease;
+}
+
+.video:hover {
+    transform: scale(1.05);
+}
+
+/* Home and Next buttons */
+.home-btn, .next-btn {
+    position: absolute;
+    bottom: 10px;
+    padding: 10px 20px;
+    background-color: #001f3f;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.home-btn {
+    left: 10px;
+}
+
+.next-btn {
+    right: 10px;
+}
+
+.home-btn:hover, .next-btn:hover {
+    background-color: #f1c40f;
+    color: black;
+}
+
+.home-btn:active, .next-btn:active {
+    background-color: #f39c12;
+    color: black;
+}
+
+/* Message Button with Icon */
+.message-btn {
+    position: absolute;
+    bottom: 50px;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 10px;
+    background-color: #001f3f;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.message-btn img.icon {
+    width: 30px;
+    height: 30px;
+}
+
+.message-btn:hover {
+    background-color: #f1c40f;
+}
+
+.message-btn:active {
+    background-color: #f39c12;
+}
+
+
+/* Popup styling */
+.popup {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    display: none;
+    justify-content: center;
+    align-items: center;
+}
+
+.popup-content {
+    background-color: #001f3f;
+    padding: 20px;
+    border-radius: 10px;
+    position: relative;
+    text-align: center;
+    max-width: 80%;
+}
+
+.popup-content p {
+    color: white;
+}
+
+/* Close button */
+.close {
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    font-size: 2rem;
+    color: #f1c40f;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.close:hover {
+    color: red;
+}
+
+/* Smooth transitions for popup */
+.popup {
+    opacity: 0;
+    transition: opacity 0.5s ease;
+}
+
+.popup.show {
+    display: flex;
+    opacity: 1;
+}

@@ -1,0 +1,109 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #1a1a1a;
+    font-family: 'Arial', sans-serif;
+    color: #f0f0f0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    overflow: hidden; /* Hide scrollbars */
+}
+
+.container {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+header {
+    background-color: rgba(0, 0, 0, 0.7);
+    padding: 20px;
+    text-align: center;
+    position: relative;
+    z-index: 2;
+}
+
+header h1 {
+    font-size: 2.5em;
+    margin-bottom: 10px;
+}
+
+header p {
+    font-size: 1.2em;
+}
+
+#video-note {
+    margin: 0; /* Remove margin */
+    padding: 0; /* Remove padding */
+    text-align: center;
+    font-size: 0.9em;
+    color: #ffcc00; /* Highlight note in a contrasting color */
+    position: relative;
+    z-index: 1;
+    height: 100px; /* Adjust height as needed */
+    display: flex;
+    align-items: flex-start; /* Align text at the top */
+    justify-content: center; /* Center text horizontally */
+}
+
+.video-wrapper {
+    flex-grow: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    margin-top: 40px;
+}
+
+video {
+    width: 100%;
+    height: auto;
+    max-height: 80vh; /* Ensure video doesn't exceed 80% of viewport */
+    background: black;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+}
+
+.navigation {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+    position: relative;
+    z-index: 2;
+}
+
+.nav-btn {
+    background-color: #ffcc00;
+    color: black;
+    border: none;
+    border-radius: 50%;
+    padding: 15px;
+    font-size: 1.5em;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+    z-index: 3; /* Ensure buttons are visible on top of the video */
+}
+
+.nav-btn:hover {
+    background-color: #f0f0f0;
+}
+
+.nav-btn:active {
+    transform: scale(0.9); /* Smooth effect on button click */
+}
+
+.nav-btn:focus {
+    outline: none;
+}

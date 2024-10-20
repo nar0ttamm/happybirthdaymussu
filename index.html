@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=1000, user-scalable=no">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"> <!-- Added Font Awesome -->
+    <title>Happy Birthday!</title>
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <h1>Happy Birthday!</h1>
+            <nav>
+                <ul>
+                    <li><a href="#my_mussu"><i class="fas fa-heart"></i> My mussu</a></li>
+                    <li><a href="#journey"><i class="fas fa-map"></i> Our Journey</a></li>
+                    <li><a href="#us"><i class="fas fa-user-friends"></i> Us Core </a></li>
+                    <li><a href="#best-days"><i class="fas fa-star"></i> Our Best Days</a></li>
+                    <li><a href="#chand"><i class="fas fa-moon"></i> Chand Si Mehbooba</a></li> <!-- New Nav Button -->
+                </ul>
+            </nav>
+        </header>
+        <main>
+            <section id="video-section">
+                <video id="video" autoplay muted playsinline loop>
+                    <source src="you.mp4" type="video/mp4">
+                </video>
+                <audio id="video-audio" src="bgm/youbgm.mp3"></audio> <!-- Background music for video -->
+            </section>
+
+            <section id="my_mussu" onclick="window.location.href='my_mussu.html'">
+                <h1>My Mussu</h1>
+                <p>You are the most special treasure I have 💓</p>
+                <audio id="mussu-audio" src="bgm/mussubgm.mp3"></audio>
+            </section>
+
+            <section id="journey" onclick="window.location.href='journey/journey.html'">
+                <h2>Our Journey</h2>
+                <p>Holding your hand makes my dreams come true 💗</p>
+                <audio id="journey-audio" src="bgm/journeybgm.mp3"></audio>
+            </section>
+
+            <section id="us" onclick="window.location.href='us/us.html'">
+                <h2>Core Us</h2>
+                <p>I love when you surrender and I take care of your heart 💞</p>
+                <audio id="us-audio" src="bgm/usbgm.mp3"></audio>
+            </section>
+
+            <section id="best-days" onclick="window.location.href='best_days/best_days.html'">
+                <h2>Best Days</h2>
+                <p>Our few but longlived desired and manifested days 💝</p>
+                <audio id="bestdays-audio" src="bgm/bestdaysbgm.mp3"></audio>
+            </section>
+
+            <section id="chand" onclick="window.location.href='chand/chand.html'">
+                <h2>Chand Si Mehbooba</h2>
+                <p>You are my chand, lights up my dark nights 🌙</p>
+                <audio id="chand-audio" src="bgm/chandbgm.mp3"></audio>
+            </section>
+        </main>
+        <footer>
+            <h2>Yours and only yours, Narottam</h2>
+        </footer>
+    </div>
+    <script>
+        // Smooth scrolling behavior
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    
+        // Highlighting and blurring effect
+        const sections = document.querySelectorAll('section');
+        const navLinks = document.querySelectorAll('nav ul li a');
+    
+        navLinks.forEach(link => {
+            link.addEventListener('click', function (e) {
+                e.preventDefault(); // Prevent default scroll behavior
+    
+                // Stop all audio before playing the next one
+                const audios = document.querySelectorAll('audio');
+                audios.forEach(audio => {
+                     audio.pause()
+                     audio.currentTime = 0;
+                });
+
+                videoAudio.pause();
+                videoAudio.currentTime = 0;
+
+                // Play background music for the clicked section
+                const targetId = this.getAttribute('href').substring(1); // Get the target section ID
+                const targetAudio = document.getElementById(targetId + '-audio');
+                if (targetAudio) {
+                    targetAudio.play(); // Play the respective section's background music
+                }
+    
+                // Remove effects from all sections
+                sections.forEach(section => {
+                    section.classList.remove('highlight');
+                    section.classList.remove('scale');
+                    section.classList.remove('blur');
+                });
+    
+                const targetSection = document.getElementById(targetId);
+    
+                // Add highlight and scale class to the target section
+                targetSection.classList.add('highlight');
+                targetSection.classList.add('scale');
+    
+                // Add blur class to all other sections
+                sections.forEach(section => {
+                    if (section !== targetSection) {
+                        section.classList.add('blur');
+                    }
+                });
+    
+                // After 5 seconds, remove the highlight, scale, and blur classes
+                setTimeout(() => {
+                    targetSection.classList.remove('highlight');
+                    targetSection.classList.remove('scale');
+                    sections.forEach(section => {
+                        section.classList.remove('blur');
+                    });
+                }, 5000);
+            });
+        });
+    
+        // Video section audio
+        const videoElement = document.querySelector('video');
+        const videoAudio = document.createElement('audio');
+        videoAudio.src = 'bgm/youbgm.mp3'; // Add the path to your video section's background music
+    
+        videoElement.addEventListener('click', function () {
+            // Stop all audio before playing the video audio
+            const audios = document.querySelectorAll('audio');
+            audios.forEach(audio =>  {
+                audio.pause();
+                audio.currentTime = 0;
+            });
+    
+            videoAudio.play(); // Play the background music when the video is clicked
+        });
+        document.getElementById('mussu-audio').addEventListener('play', function() {
+    console.log('Mussu audio is playing');
+});
+    </script>
+    
+</body>
+
+</html>

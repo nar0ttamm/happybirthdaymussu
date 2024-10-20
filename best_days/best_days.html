@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Best Days</title>
+    <link rel="stylesheet" href="best_days.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h2>Best Days Memories</h2>
+            <div class="year-buttons">
+                <button class="year-btn" id="btn-2023">2023</button>
+                <button class="year-btn" id="btn-2024">2024</button>
+            </div>
+        </header>
+        
+        <div class="date-display" id="date-display">2nd June</div>
+        
+        <div class="slideshow">
+            <!-- Changed from img to video -->
+            <video id="slideshow-video" autoplay muted></video>
+            <div id="message-icon" class="message-icon"></div>
+        </div>
+
+        <div class="navigation">
+            <button id="next-btn" class="nav-btn">Next Date</button>
+        </div>
+    </div>
+
+    <!-- Popup for messages -->
+    <div id="message-popup" class="message-popup">
+        <button id="close-popup" class="close-popup">✖</button>
+        <div id="popup-message" class="popup-message"></div>
+    </div>
+
+    <script src="best_days.js"></script>
+</body>
+</html>

@@ -1,0 +1,163 @@
+* {
+    box-sizing: border-box; /* Ensure padding and borders are included in the element's total width and height */
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #1a1a1a; /* Dark background */
+    color: #f0f0f0; /* Light text color */
+}
+
+.container {
+    display: flex;
+    flex-direction: column; /* Stack components vertically */
+    height: 100vh; /* Full viewport height */
+}
+
+header {
+    background-image: url('img.png'); /* Path to your image */
+    background-size: cover; /* Cover the entire header */
+    background-position: center; /* Center the image */
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    height: 150px; /* Fixed height */
+    width: 100%; /* Fixed width */
+    position: sticky; /* Stick to top */
+    color: white; /* Text color for contrast */
+    text-align: center; /* Center the text */
+    top: 0;
+    z-index: 100;
+}
+
+header h1 {
+    position: relative;
+    z-index: 1;
+    margin-top: 50px;
+}
+
+/* Nav without scaling behavior */
+nav {
+    margin-top: 10px;
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+}
+
+nav ul li {
+    margin: 0 20px;
+}
+
+nav ul li a {
+    color: #00bfff; /* Light blue */
+    text-decoration: none;
+    font-weight: bold;
+    padding: 5px;
+    transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+    color: #ffcc00; /* Yellow on hover */
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    padding: 0;
+    overflow-y: auto; /* Enable vertical scrolling */
+}
+
+section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #444;
+    border: 1px solid #555;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    padding: 20px;
+    width: 100%; /* Fixed width */
+    min-height: 500px; /* Fixed height */
+    margin: 0; /* No margin */
+    position: relative; /* Fixed positioning */
+}
+
+section:hover {
+    background-color: #555;
+}
+
+footer {
+    background-image: url('img2.png');
+    background-size: cover;
+    background-position: center;
+    text-align: center;
+    padding: 30px;
+    background-color: #333;
+    color: #f0f0f0;
+    position: relative;
+    width: 100%;
+}
+
+/* Background image with opacity */
+#my_mussu, #journey, #us, #best-days, #chand {
+    position: relative;
+    z-index: 1;
+    color: white;
+}
+
+#my_mussu::before, #journey::before, #us::before, #best-days::before, #chand::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    opacity: 0.4;
+    z-index: -1;
+    border-radius: 8px;
+}
+
+/* Highlight the selected section */
+.highlight {
+    padding: 80px; /* Increase padding */
+    box-shadow: 0 0 30px rgba(255, 255, 255, 0.7); /* Add glowing effect */
+    transition: padding 0.3s ease, box-shadow 0.5s ease; /* Smooth transition */
+}
+
+.scale {
+    transform: scale(1.5); /* Slightly increase the size */
+    transition: transform 0.3s ease; /* Smooth transition for scaling */
+}
+/* Blur the other sections */
+.blur {
+    filter: blur(4px); /* Apply blur effect */
+    transition: filter 0.3s ease; /* Smooth transition */
+}
+
+#video-section {
+    position: relative;
+    width: 100%;
+    height: 50vh; /* Adjust height as needed */
+}
+
+#video-section video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensure video fills the container */
+    border: none
+}
+
+/* Background images for sections */
+#my_mussu::before { background-image: url('my_mussubg.png'); }
+#journey::before { background-image: url('journey/journeybg.jpg'); }
+#us::before { background-image: url('us/usbg.jpg'); }
+#best-days::before { background-image: url('best_days/best_daysbg.jpg'); }
+#chand::before { background-image: url('chand/chand.jpg'); }

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Special Page</title>
+    <link rel="stylesheet" href="journey.css">
+</head>
+<body>
+
+    <header>
+        <h1>Happy Birthday, My Love!</h1>
+    </header>
+
+    <div class="video-container">
+        <video id="video1" class="video" controls autoplay>
+            <source src="2023.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+
+        <!-- Popup Message Button with Icon -->
+        <button class="message-btn" onclick="togglePopup()">
+            <img src="icon.png" alt="Message" class="icon">
+        </button>
+
+        <!-- Popup -->
+        <div id="popup" class="popup">
+            <div class="popup-content">
+                <span class="close" onclick="togglePopup()">&times;</span>
+                <p>This is a special message for this video!</p>
+            </div>
+        </div>
+
+        <!-- Navigation Buttons -->
+        <a href="../index.html" class="home-btn">Home</a>
+        <button class="next-btn" onclick="playNext()">Next</button>
+    </div>
+
+    <script src="journey.js"></script>
+</body>
+</html>
