@@ -12,7 +12,7 @@
             <h3>इस सुन्दर गीत रूपक प्रेम को अपने नाम तीसरी बार करने की ढेरो शुभकामनाये मेरी मेहबूबा 💕</h3>
         </header>
         
-        <span id="video-note">This is your video note for the first video</span>
+        <span id="video-note">I Love You A Lot Meri Mussu (lots of hugs)</span>
         
         <div class="video-wrapper">
             <!-- Video player -->
@@ -39,21 +39,21 @@
         videoElement.addEventListener('ended', function() {
             currentVideo = (currentVideo + 1) % videos.length;
             videoElement.src = videos[currentVideo];
-            videoNote.textContent = `This is your video note for video ${currentVideo + 1}`;
+            videoNote.textContent = `I Love You A Lot Meri Mussu (lots of hugs)`;
             videoElement.play();
         });
 
         document.getElementById("next-btn").addEventListener("click", function() {
             currentVideo = (currentVideo + 1) % videos.length;
             videoElement.src = videos[currentVideo];
-            videoNote.textContent = `This is your video note for video ${currentVideo + 1}`;
+            videoNote.textContent = `Chand kahu ya mehboob, Tum to mere jeevan me chand sa chamakti ho, Mujhe meri mehboob sa hoke samet'ti ho, Tum chand banke mujhe disha dikhati ho, Meri mehboob banke meri humsafar bhi hojati ho, Tumhare asmaan me aane se taare chup jaate hai, Mehboob ke miljaane se baakiyo ki maujudgi chali jaati hai Jarur hi tumhe khuda ne tarasa hai, tabhi to chand si chamakti ho. Jarur hi tumhe ishwar ne bheja hai, tabhi to meri mehboob si ban gayi ho. Chand kahu ya mehboob, Tum to dono hi meri ho. Meri chand si mehbooba💕`;
             videoElement.play();
         });
 
         document.getElementById("back-btn").addEventListener("click", function() {
             currentVideo = (currentVideo - 1 + videos.length) % videos.length;
             videoElement.src = videos[currentVideo];
-            videoNote.textContent = `This is your video note for video ${currentVideo + 1}`;
+            videoNote.textContent = `Chand kahu ya mehboob, Tum to mere jeevan me chand sa chamakti ho, Mujhe meri mehboob sa hoke samet'ti ho, Tum chand banke mujhe disha dikhati ho, Meri mehboob banke meri humsafar bhi hojati ho, Tumhare asmaan me aane se taare chup jaate hai, Mehboob ke miljaane se baakiyo ki maujudgi chali jaati hai Jarur hi tumhe khuda ne tarasa hai, tabhi to chand si chamakti ho. Jarur hi tumhe ishwar ne bheja hai, tabhi to meri mehboob si ban gayi ho. Chand kahu ya mehboob, Tum to dono hi meri ho. Meri chand si mehbooba💕`;
             videoElement.play();
         });
     </script>

@@ -7,14 +7,14 @@ const videos2024 = ["10.mp4", "11.mp4", "12.mp4", "memory2024_4.mp4", "memory202
 
 const messages = {
     "2023": {
-        "2nd June": "Our first memory together!",
-        "3rd June": "The day we went on our first adventure!",
-        "4th June": "Just a lovely day spent together."
+        "2nd June": "The day of our dreams, privilege of finally seeing each other, holding, the prayers and thankfullness in the temple, the first kiss in the theatre, the love we shared and explored, making those dreams get real!",
+        "3rd June": "Recovering from the overhwelmed happiness of previous day, rejoying each other, clicking memories, eating pizzas, and what not!",
+        "4th June": "Met on this sday with the feeling of meeting the next day too, we didn't knew it was the last day as god planned and saved too! Anyways that day, we sahred our deep pain and feelings through tears while being crazy too, mwaaah <3"
     },
     "2024": {
-        "10th June": "Can't wait for more memories!",
-        "11th June": "Remember this special moment!",
-        "12th June": "You make every day better!"
+        "10th June": "Wreathed in red and white, we met after all the wait of a year, we prayed, we crazily loved each other, the kisses, the delicious pasta, the hugs, all of it made our energy go high for our love. I luved your georegous body alot baby!",
+        "11th June": "You looked so sexy this day, the uttapam and instant sabji were on top my chefgirl, waiting to be fed again with your hands, finally we clicked a lot, we shot reels, I just Love You A Lot!",
+        "12th June": "A very important day, the yummy spicy noodles, aaah mouthwatered, we hugged each other more hardly with the sense of being it the last day, we slept in each other's arms, we weeped, we kissed, we motivated each other for another period of sturggle, We did a goodbye and just...!"
     }
 };
 
